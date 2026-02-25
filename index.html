@@ -2,39 +2,91 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Loading</title>
+    <title>Loading | Murder Networks</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
             height: 100vh; overflow: hidden;
-            background: linear-gradient(135deg, #0c0c0c, #1a1a2e);
-            color: #ffffff; font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0015, #150033, #1a0026); /* Deeper purple-black cosmic vibe */
+            color: #ffffff; font-family: 'Arial', 'Helvetica', sans-serif;
             display: flex; align-items: center; justify-content: center;
         }
-        #container { text-align: center; }
+        #container { 
+            text-align: center; 
+            max-width: 90%;
+        }
+        #logo {
+            width: 180px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(200, 100, 255, 0.7)); /* Glow to match neon feel */
+        }
+        #branding {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #c084fc, #a78bfa, #60a5fa, #38bdf8); /* Purple → magenta → blue → cyan */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+        }
         #spinner {
-            border: 6px solid rgba(255,255,255,0.1);
-            border-top: 6px solid #4facfe; border-radius: 50%;
-            width: 60px; height: 60px; animation: spin 1s linear infinite;
-            margin: 0 auto 30px;
+            border: 8px solid rgba(255,255,255,0.08);
+            border-top: 8px solid #c084fc; /* Vibrant purple */
+            border-right: 8px solid #a78bfa;
+            border-radius: 50%;
+            width: 70px; height: 70px;
+            animation: spin 1.2s linear infinite;
+            margin: 30px auto;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        #title { font-size: 32px; margin-bottom: 10px; color: #4facfe; }
-        #subtitle { font-size: 20px; margin-bottom: 40px; opacity: 0.8; }
-        #status { font-size: 18px; margin-bottom: 20px; }
+        #title { 
+            font-size: 36px; 
+            margin-bottom: 12px; 
+            color: #e0bbff; /* Soft purple-white */
+            text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+        }
+        #subtitle { 
+            font-size: 22px; 
+            margin-bottom: 45px; 
+            opacity: 0.85; 
+            color: #c4b5fd;
+        }
+        #status { 
+            font-size: 20px; 
+            margin-bottom: 25px; 
+            color: #a0d2ff;
+        }
         #progress-container {
-            width: 400px; height: 8px; background: rgba(255,255,255,0.1);
-            border-radius: 4px; margin: 0 auto 20px; overflow: hidden;
+            width: 450px; 
+            height: 10px; 
+            background: rgba(255,255,255,0.08);
+            border-radius: 5px; 
+            margin: 0 auto 20px; 
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
         }
         #progress {
-            height: 100%; background: linear-gradient(90deg, #4facfe, #00f2fe);
-            width: 0%; transition: width 0.3s ease;
+            height: 100%; 
+            background: linear-gradient(90deg, #c084fc, #a78bfa, #60a5fa, #38bdf8); /* Matching gradient */
+            width: 0%; 
+            transition: width 0.4s ease;
         }
-        #percent { font-size: 16px; opacity: 0.7; }
+        #percent { 
+            font-size: 18px; 
+            opacity: 0.75; 
+            color: #d1d5db;
+        }
     </style>
 </head>
 <body>
     <div id="container">
+        <img id="logo" src="https://www.shutterstock.com/shutterstock/photos/2261080657/display_1500/stock-vector-abstract-w-and-m-initial-logo-design-with-colorful-blend-style-wm-initial-logo-for-business-and-2261080657.jpg" alt="Murder Networks Logo">
+        <!-- Alternative closer match if you prefer: https://thumbs.dreamstime.com/b/captivating-image-showcases-abstract-brush-stroke-letter-m-expertly-crafted-typography-design-project-dynamic-401395236.jpg -->
+        
+        <div id="branding">Connecting to Murder Networks!</div>
+        
         <div id="spinner"></div>
         <div id="title">Loading...</div>
         <div id="subtitle">Please wait</div>
@@ -44,6 +96,7 @@
         </div>
         <div id="percent">0%</div>
     </div>
+
     <script>
         let total = 0, needed = 0;
 
